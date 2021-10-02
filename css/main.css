@@ -180,3 +180,23 @@ body {
 
 .btn-outline-primary:hover {
   color: #fff; }
+
+.ww-footer-page{
+  background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/our-vacation/img-9.jpg") no-repeat center center;
+    background-size: cover;
+    background-position: 70%;
+    height: 100vh;
+    min-height: 480px;
+    max-height: 480px;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.ww-thank-you {
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+  font-size: 60px;
+}
