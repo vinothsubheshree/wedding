@@ -28,6 +28,8 @@
   <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
   <link href="css/ekko-lightbox.css?ver=1.1.0" rel="stylesheet">
   <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+  <link rel="stylesheet" href="css/flip.min.css">
+
   <noscript>
     <style type="text/css">
       [data-aos] {
@@ -39,6 +41,23 @@
 </head>
 
 <body id="top">
+  <style>
+    .tick {
+      padding-bottom: 1em;
+      font-size: 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+
+    .tick-label {
+      font-size: .375em;
+      text-align: center;
+    }
+
+    .tick-group {
+      margin: 0 .25em;
+      text-align: center;
+    }
+  </style>
   <header></header>
   <div class="page-content">
     <div class="div">
@@ -103,6 +122,29 @@
                 <!-- <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></div> -->
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="ww-section pt-1 pb-1" id="couple">
+        <div class="container">
+          <div class="tick" data-did-init="handleTickInit">
+
+            <div data-repeat="true" data-layout="horizontal center fit" data-transform="preset(d, h, m, s) -> delay">
+
+              <div class="tick-group">
+
+                <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+
+                  <span data-view="flip"></span>
+
+                </div>
+
+                <span data-key="label" data-view="text" class="tick-label"></span>
+
+              </div>
+
+            </div>
+
           </div>
         </div>
       </div>
@@ -389,7 +431,53 @@
     </div>
   </div>
   <footer></footer>
+  <script>
+    function handleTickInit(tick) {
+
+      // Uncomment to set labels to different language ( in this case Dutch )
+      /*
+      var locale = {
+          YEAR_PLURAL: 'Jaren',
+          YEAR_SINGULAR: 'Jaar',
+          MONTH_PLURAL: 'Maanden',
+          MONTH_SINGULAR: 'Maand',
+          WEEK_PLURAL: 'Weken',
+          WEEK_SINGULAR: 'Week',
+          DAY_PLURAL: 'Dagen',
+          DAY_SINGULAR: 'Dag',
+          HOUR_PLURAL: 'Uren',
+          HOUR_SINGULAR: 'Uur',
+          MINUTE_PLURAL: 'Minuten',
+          MINUTE_SINGULAR: 'Minuut',
+          SECOND_PLURAL: 'Seconden',
+          SECOND_SINGULAR: 'Seconde',
+          MILLISECOND_PLURAL: 'Milliseconden',
+          MILLISECOND_SINGULAR: 'Milliseconde'
+      };
+ 
+      for (var key in locale) {
+          if (!locale.hasOwnProperty(key)) { continue; }
+          tick.setConstant(key, locale[key]);
+      }
+      */
+
+      var nextYear = (new Date()).getFullYear() + 1;
+
+      // Tick.count.down(nextYear + '-01-01').onupdate = function (value) {
+      //   tick.value = value;
+      // };
+
+      Tick.count.down('2021-11-29').onupdate = function (value) {
+        tick.value = value;
+      };
+    }
+  </script>
+
+  <!-- END OF FLIP EXAMPLE PRESET -->
+
+
   <script src="scripts/jquery.min.js?ver=1.1.0"></script>
+  <script src="scripts/flip.min.js"></script>
   <script src="scripts/bootstrap.bundle.min.js?ver=1.1.0"></script>
   <script src="scripts/aos.js?ver=1.1.0"></script>
   <script src="scripts/ekko-lightbox.min.js?ver=1.1.0"></script>
