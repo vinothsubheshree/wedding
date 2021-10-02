@@ -3,9 +3,10 @@ body {
 
 /* Home Page Style */
 .ww-home-page {
-  background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/home-img.jpg") no-repeat center center;
+  /* background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/home-img.jpg") no-repeat center center; */
+  background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/our-vacation/img-9.jpg") no-repeat center center;
   background-size: cover;
-  background-position: 70%;
+  background-position: 60%;
   height: 100vh;
   min-height: 480px;
   max-height: 1080px; }
@@ -182,9 +183,10 @@ body {
   color: #fff; }
 
 .ww-footer-page{
-  background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/our-vacation/img-9.jpg") no-repeat center center;
+  background: linear-gradient( rgb(0 0 0 / 60%), rgb(0 0 0 / 60%) ), url("../images/our-vacation/img-6.jpg") no-repeat center center;
     background-size: cover;
-    background-position: 70%;
+    background-position-x: 70%;
+    background-position-y: 15%;
     height: 100vh;
     min-height: 480px;
     max-height: 480px;
