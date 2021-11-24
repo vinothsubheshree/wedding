@@ -38,6 +38,47 @@
       }
     </style>
   </noscript>
+
+
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.attributes.href.value.substr(0, 1) === '#') {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+
+<script>
+  $(window).scroll(function() {
+      if ($(this).scrollTop()>300)
+       {
+          $('.bounce').hide(1000);
+       }
+      else
+       {
+        $('.bounce').show(1000);
+       }
+   });
+  </script>
 </head>
 
 <body id="top">
@@ -57,11 +98,87 @@
       margin: 0 .25em;
       text-align: center;
     }
+
+
+
+    .bounce {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      margin-top: -25px;
+      margin-left: -25px;
+      height: 50px;
+      width: 50px;
+      background: url('https://static1.squarespace.com/static/5e78f290575a6321739eba41/t/5ec8625c6dad0e25fa5a8234/1590190684880/Arrow.png');
+      background-size: 100% auto;
+      -webkit-animation: bounce 1s infinite;
+      -moz-animation: bounce 1s infinite;
+      -o-animation: bounce 1s infinite;
+      animation: bounce 1s infinite;
+
+    }
+
+    @-webkit-keyframes bounce {
+      0% {
+        bottom: 0px;
+      }
+
+      50% {
+        bottom: 15px;
+      }
+
+      100% {
+        bottom: 30;
+      }
+    }
+
+    @-moz-keyframes bounce {
+      0% {
+        bottom: 0px;
+      }
+
+      50% {
+        bottom: 15px;
+      }
+
+      100% {
+        bottom: 30;
+      }
+    }
+
+    @-o-keyframes bounce {
+      0% {
+        bottom: 0px;
+      }
+
+      50% {
+        bottom: 15px;
+      }
+
+      100% {
+        bottom: 30;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        bottom: 0px;
+      }
+
+      50% {
+        bottom: 15px;
+      }
+
+      100% {
+        bottom: 30;
+      }
+    }
   </style>
   <header></header>
   <div class="page-content">
     <div class="div">
       <div class="ww-home-page" id="home">
+        <a href="#couple" class="bounce"></a>
         <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
           <div class="container ww-announcement-container">
             <p class="ww-couple-name ww-title" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">
@@ -358,9 +475,10 @@
         </div>
       </div>
       <div class="ww-footer-page" id="footer">
-        <p class="ww-thank-you ww-title aos-animate" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">
+        <p class="ww-thank-you ww-title aos-animate" data-aos="zoom-in-down" data-aos-delay="300"
+          data-aos-duration="1000">
           Thank You</p>
-        
+
       </div>
       <!-- <div class="ww-section ww-rsvp-detail text-white" id="rsvp">
         <div class="container" data-aos="zoom-in-up" data-aos-duration="1000">
